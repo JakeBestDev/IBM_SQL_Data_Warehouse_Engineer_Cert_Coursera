@@ -63,9 +63,9 @@ LIMIT 5
 
 -- Problem 9) Use a sub-query to determine which Community Area has the least value for school Safety Score?
 ;
-SELECT DISTINCT(PRIMARY_TYPE)
-FROM CHICAGO_CRIME_DATA
-WHERE LOCATION_DESCRIPTION = 'GAS STATION'
+SELECT COMMUNITY_AREA_NAME, SAFETY_SCORE
+FROM CHICAGO_PUBLIC_SCHOOLS
+WHERE SAFETY_SCORE = (SELECT MIN(SAFETY_SCORE) FROM CHICAGO_PUBLIC_SCHOOLS)
 ;
 
 -- Problem 10) [Without using an explicit JOIN operator] Find the Per Capita Income of the Community Area which has a school Safety Score of 1.
