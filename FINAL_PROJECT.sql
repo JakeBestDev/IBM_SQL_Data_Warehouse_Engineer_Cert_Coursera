@@ -17,7 +17,7 @@ LIMIT 10
 
 -- Problem 3) How many crimes involve an arrest?
 ;
-SELECT *
+SELECT COUNT(*)
 FROM CHICAGO_CRIME_DATA
 WHERE ARREST =  TRUE
 ;
