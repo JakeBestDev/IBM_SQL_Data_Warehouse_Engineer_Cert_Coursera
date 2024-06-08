@@ -1,4 +1,4 @@
--- Stored Procedures EXAMPLE 1 --
+-- ACID PROCEDURE EXAMPLE 1 --
 -- Uses the BankAccounts and ShoeShop tables. RUN SQL CREATE STATEMENTS FIRST TO CREATE THE DATA!! --
 
 
