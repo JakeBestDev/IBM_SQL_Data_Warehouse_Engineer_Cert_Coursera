@@ -1,0 +1,38 @@
+-- HONORS FINAL PROJECT - PART 1 - Using Joins --
+-- USES THE CENSUS_DATA, CHICAGO_PUBLIC_SCHOOLS, and CHICAGO_CRIME_DATA DATASETS --
+
+
+-- 1) Write and execute a SQL query to list the school names, community names and average attendance for communities with a hardship index of 98.
+;
+SELECT CPS.NAME_OF_SCHOOL, CD.COMMUNITY_AREA_NAME, CPS.AVERAGE_STUDENT_ATTENDANCE
+FROM CENSUS_DATA CD 
+LEFT JOIN CHICAGO_PUBLIC_SCHOOLS CPS ON CD.COMMUNITY_AREA_NUMBER = CPS.COMMUNITY_AREA_NUMBER
+WHERE CD.HARDSHIP_INDEX = 98
+;
+
+-- 2) Write and execute a SQL query to list all crimes that took place at a school. Include case number, crime type and community name.
+;
+SELECT CCD.CASE_NUMBER, CCD.PRIMARY_TYPE, CD.COMMUNITY_AREA_NAME
+FROM CHICAGO_CRIME_DATA CCD
+LEFT JOIN CENSUS_DATA CD ON CCD.COMMUNITY_AREA_NUMBER = CD.COMMUNITY_AREA_NUMBER
+WHERE CCD.LOCATION_DESCRIPTION LIKE '%SCHOOL%'
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
